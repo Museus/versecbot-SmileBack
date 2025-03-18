@@ -16,6 +16,7 @@
 
     license = "MIT"
     license-files = ["LICEN[CS]E*"]
+    dependencies = ["discord-py>=2,<3", "pydantic_settings>=2,<3"]
 
     [project.urls]
         Homepage = "https://github.com/Museus/versecbot-SmileBack"

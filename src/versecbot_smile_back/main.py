@@ -4,6 +4,7 @@ from versecbot.jobs import Watcher
 
 from .settings import SmileBackSettings
 from .logging import logger
+from .util import contains_smile
 
 
 class SmileBack(Watcher):
@@ -18,7 +19,7 @@ class SmileBack(Watcher):
         if not super().should_act(message):
             return False
 
-        return ":)" in message.content
+        return contains_smile(message.content)
 
     async def act(self, message: Message):
         logger.info(
