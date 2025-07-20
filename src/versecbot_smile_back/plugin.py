@@ -11,7 +11,6 @@ logger = getLogger("versecbot.plugins.smile_back")
 
 class SmileBackPlugin(Plugin):
     name: str = "smile_back"
-    settings: SmileBackSettings
     intents = [Intents.guild_messages]
 
     def __init__(self):
@@ -24,7 +23,7 @@ class SmileBackPlugin(Plugin):
             return
 
         try:
-            smile_handler = SmileBack(settings)
+            smile_handler = SmileBack(settings.smile)
         except Exception:
             logger.exception("Failed to initialize SmileBack")
         else:

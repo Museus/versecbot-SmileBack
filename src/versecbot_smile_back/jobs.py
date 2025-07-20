@@ -3,7 +3,7 @@ from logging import getLogger
 
 from versecbot_interface import Watcher, INTERFACE_VERSION
 
-from .settings import SmileBackSettings
+from .settings import SmileSettings
 
 logger = getLogger("versecbot.plugins.smile_back.smile")
 
@@ -22,13 +22,17 @@ class SmileBack(Watcher):
     interface_version = INTERFACE_VERSION
     name = "watcher_smile_back"
 
-    def __init__(self, settings: SmileBackSettings):
-        super().__init__(settings, logger=logger)
-        self.smile_to_send = settings.smile.smile_to_send
-        self.recognized_smiles = settings.smile.recognized_smiles
-        self.only_recognized_smiles = settings.smile.only_recognized_smiles
+    def __init__(self, raw_settings: SmileSettings):
+        settings = settings = SmileSettings.model_validate(raw_settings)
 
-    def initialize(self, settings: SmileBackSettings, *args):
+        super().__init__(settings, logger=logger)
+        self.smile_to_send = settings.smile_to_send
+        self.recognized_smiles = settings.recognized_smiles
+        self.only_recognized_smiles = settings.only_recognized_smiles
+
+    def initialize(self, raw_settings: SmileSettings, *args):
+        settings = SmileSettings.model_validate(raw_settings)
+
         super().initialize(settings, *args)
         logger.info("SmileBack initialized with smile: %s", self.smile_to_send)
 

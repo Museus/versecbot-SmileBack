@@ -1,3 +1,5 @@
 from .plugin import SmileBackPlugin
 
-plugin = SmileBackPlugin()
+__all__ = [
+    "SmileBackPlugin",
+]
