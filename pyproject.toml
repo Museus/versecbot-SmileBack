@@ -28,7 +28,7 @@
 
 
     [project.optional-dependencies]
-        qa = ["flake8", "pytest"]
+        qa = ["ruff", "pytest"]
 
     [project.entry-points.'versecbot.plugins']
         smile_back = 'versecbot_smile_back:SmileBackPlugin'

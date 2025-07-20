@@ -1,0 +1,9 @@
+[versecbot.plugins.smile_back]
+    enabled = true
+
+    [versecbot.plugins.smile_back.smile]
+        enabled = true
+        only_recognized_smiles = true
+
+        recognized_smiles = [":D"]
+        smile_to_send = ":)"
