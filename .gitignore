@@ -161,3 +161,6 @@ cython_debug/
 
 # Go-Task fingerprints
 .task/
+
+# Ruff
+.ruff_cache/
