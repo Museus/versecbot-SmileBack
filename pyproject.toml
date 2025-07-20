@@ -17,7 +17,7 @@
     dependencies = [
         "discord-py>=2,<3",
         "pydantic_settings>=2,<3",
-        "versecbot_interface>=0.1",
+        "versecbot_interface@git+https://github.com/Museus/versecbot-interface.git@v0.2",
     ]
 
     license = "MIT"
@@ -32,3 +32,6 @@
 
     [project.entry-points.'versecbot.plugins']
         smile_back = 'versecbot_smile_back:SmileBackPlugin'
+
+[tool.hatch.metadata]
+    allow-direct-references = true
