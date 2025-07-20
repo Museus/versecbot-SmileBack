@@ -1,3 +1,3 @@
-from versecbot.log_util import get_plugin_logger
+from logging import getLogger
 
-logger = get_plugin_logger("smile_back")
+logger = getLogger("versecbot.plugins.smile_back")

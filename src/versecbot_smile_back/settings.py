@@ -1,4 +1,4 @@
-from versecbot.settings import PluginSettings
+from versecbot_interface import PluginSettings
 
 
 class SmileBackSettings(PluginSettings):

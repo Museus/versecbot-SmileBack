@@ -1,5 +1,5 @@
 from discord import Intents
-from versecbot.jobs import Plugin
+from versecbot_interface import Plugin
 
 from .settings import SmileBackSettings
 from .main import SmileBack
@@ -31,3 +31,6 @@ class SmileBackPlugin(Plugin):
             logger.info("Ready to start smiling back!")
 
         logger.debug("SmileBack initialized")
+
+
+plugin = SmileBackPlugin()
