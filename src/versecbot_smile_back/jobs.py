@@ -17,7 +17,6 @@ def contains_smile(message_contents: str, recognized_smiles: list[str]) -> bool:
 class SmileBack(Watcher):
     smile_to_send: str
     recognized_smiles: list[str]
-    only_recognized_smiles: bool
 
     interface_version = INTERFACE_VERSION
     name = "watcher_smile_back"
@@ -28,7 +27,6 @@ class SmileBack(Watcher):
         super().__init__(settings, logger=logger)
         self.smile_to_send = settings.smile_to_send
         self.recognized_smiles = settings.recognized_smiles
-        self.only_recognized_smiles = settings.only_recognized_smiles
 
     def initialize(self, raw_settings: SmileSettings, *args):
         settings = SmileSettings.model_validate(raw_settings)
